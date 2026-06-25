@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: #b94443; /* Terracota exacto obtenido de image_d0f3ca.png */
+            background-color: #b94443; /* Terracota exacto obtenido de la referencia */
             color: #ffffff;
             padding: 20px 20px 60px 20px;
             display: flex;
@@ -22,7 +22,7 @@
             min-height: 100vh;
         }
 
-        /* Nueva barra superior para el Logo corporativo */
+        /* Barra superior con soporte para el botón de regreso */
         header {
             width: 100%;
             max-width: 1200px;
@@ -32,6 +32,24 @@
             padding: 15px 0;
             margin-bottom: 30px;
             border-bottom: 1px solid rgba(245, 238, 160, 0.2);
+            position: relative; /* Permite posicionar el botón de forma absoluta a la izquierda */
+        }
+
+        /* Estilos del nuevo botón "Volver al Inicio" */
+        .back-link {
+            position: absolute;
+            left: 0;
+            color: #f5eea0; /* Tono crema corporativo */
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
         }
 
         .logo-container img {
@@ -90,6 +108,17 @@
             }
         }
 
+        /* Optimización del encabezado para pantallas móviles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .back-link {
+                position: static; /* Evita que se encime con el logo en pantallas muy angostas */
+            }
+        }
+
         @media (max-width: 600px) {
             .catalog-grid {
                 grid-template-columns: 1fr;
@@ -115,7 +144,7 @@
             bottom: -35px;
             left: 8%;
             right: 8%;
-            background-color: #f5eea0; /* Color crema de image_d0f3ca.png */
+            background-color: #f5eea0; /* Color crema */
             border-radius: 18px;
             padding: 12px 10px 8px 10px;
             text-align: center;
@@ -162,10 +191,9 @@
 </head>
 <body>
 
-    <!-- Espacio del Logo corporativo -->
     <header>
+        <a href="index.html" class="back-link">← Volver al Inicio</a>
         <div class="logo-container">
-            <!-- NOTA: Cambia 'logo.png' por el nombre real de tu archivo de logo si es diferente -->
             <img src="logo.JPG" alt="Logotipo de la Empresa">
         </div>
     </header>
@@ -177,8 +205,6 @@
 
         <div class="catalog-grid">
             
-            <!-- PRODUCTO 1 -->
-            <!-- Para ver tu foto real, cambia 'traje1.jpg' por el nombre real de tu imagen dentro de la carpeta 'fotos' -->
             <div class="photo-space" style="background-image: url('fotos/IMG_0057.jpeg');">
                 <div class="info-card">
                     <div class="description">Frankenstein</div>
@@ -188,7 +214,6 @@
                 </div>
             </div>
 
-            <!-- PRODUCTO 2 -->
             <div class="photo-space" style="background-image: url('fotos/IMG_0043.jpeg');">
                 <div class="info-card">
                     <div class="description">Calavera</div>
@@ -198,7 +223,6 @@
                 </div>
             </div>
 
-            <!-- PRODUCTO 3 -->
             <div class="photo-space" style="background-image: url('fotos/IMG_0044.jpeg');">
                 <div class="info-card">
                     <div class="description">Calavera</div>
@@ -208,7 +232,6 @@
                 </div>
             </div>
 
-            <!-- PRODUCTO 4 -->
             <div class="photo-space" style="background-image: url('fotos/IMG_0045.jpeg');">
                 <div class="info-card">
                     <div class="description">Muerto viviente</div>
@@ -218,7 +241,6 @@
                 </div>
             </div>
 
-            <!-- PRODUCTO 5 -->
             <div class="photo-space" style="background-image: url('fotos/IMG_0046.jpeg');">
                 <div class="info-card">
                     <div class="description">Calavera</div>
@@ -228,7 +250,6 @@
                 </div>
             </div>
 
-            <!-- PRODUCTO 6 -->
             <div class="photo-space" style="background-image: url('fotos/IMG_0047.jpeg');">
                 <div class="info-card">
                     <div class="description">Demonio</div>
@@ -238,7 +259,6 @@
                 </div>
             </div>
 
-            <!-- PRODUCTO 7 -->
             <div class="photo-space" style="background-image: url('fotos/IMG_0048.jpeg');">
                 <div class="info-card">
                     <div class="description">Laka Laka</div>
@@ -248,7 +268,6 @@
                 </div>
             </div>
 
-            <!-- PRODUCTO 8 -->
             <div class="photo-space" style="background-image: url('fotos/IMG_0049.jpeg');">
                 <div class="info-card">
                     <div class="description">Laka Laka</div>
@@ -258,7 +277,6 @@
                 </div>
             </div>
 
-            <!-- PRODUCTO 9 -->
             <div class="photo-space" style="background-image: url('fotos/IMG_0041.jpeg');">
                 <div class="info-card">
                     <div class="description">Gorila</div>
@@ -268,7 +286,6 @@
                 </div>
             </div>
 
-            <!-- PRODUCTO 10 -->
             <div class="photo-space" style="background-image: url('fotos/IMG_0051.jpeg');">
                 <div class="info-card">
                     <div class="description">Anonimous</div>
@@ -278,7 +295,6 @@
                 </div>
             </div>
 
-            <!-- PRODUCTO 11 -->
             <div class="photo-space" style="background-image: url('fotos/IMG_0052.jpeg');">
                 <div class="info-card">
                     <div class="description">La Casa de Papel: Corea</div>
@@ -288,7 +304,6 @@
                 </div>
             </div>
 
-            <!-- PRODUCTO 12 -->
             <div class="photo-space" style="background-image: url('fotos/IMG_0053.jpeg');">
                 <div class="info-card">
                     <div class="description">La Casa de Papel</div>
