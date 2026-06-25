@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Máscaras</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #b94443; /* Terracota exacto obtenido de image_d0f3ca.png */
+            color: #ffffff;
+            padding: 20px 20px 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Nueva barra superior para el Logo corporativo */
+        header {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(245, 238, 160, 0.2);
+        }
+
+        .logo-container img {
+            max-height: 80px; /* Tamaño ideal para que no rompa el diseño */
+            width: auto;
+            object-fit: contain;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+        }
+
+        /* Detalles decorativos de las esquinas */
+        .decor-line {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-color: #f5eea0;
+            border-style: solid;
+            opacity: 0.8;
+        }
+        .top-left {
+            top: -10px;
+            left: 10px;
+            border-width: 3px 0 0 3px;
+        }
+        .bottom-right {
+            bottom: -20px;
+            right: 10px;
+            border-width: 0 3px 3px 0;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #f5eea0; /* Tono crema de la imagen de referencia */
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 50px;
+            font-weight: 500;
+        }
+
+        /* Grid de 3 x 4 */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 65px 30px; /* Más espacio vertical para las tarjetas sobrepuestas */
+            padding-bottom: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .catalog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .catalog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Espacio para la foto */
+        .photo-space {
+            aspect-ratio: 4 / 4;
+            border: 8px solid #ffffff; /* Marco blanco idéntico al diseño original */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            position: relative;
+            border-radius: 4px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #15355e; /* Fondo azul de respaldo si la foto tarda en cargar */
+        }
+
+        /* Cuadro sobrepuesto inferior (Card de información) */
+        .info-card {
+            position: absolute;
+            bottom: -35px;
+            left: 8%;
+            right: 8%;
+            background-color: #f5eea0; /* Color crema de image_d0f3ca.png */
+            border-radius: 18px;
+            padding: 12px 10px 8px 10px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            z-index: 10;
+            color: #b94443;
+            border: 1px solid rgba(185, 68, 67, 0.2);
+        }
+
+        .info-card .description {
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            color: #a33332;
+        }
+
+        .info-card .details {
+            font-size: 0.75rem;
+            color: #611c1b;
+            margin-bottom: 8px;
+            line-height: 1.2;
+            font-weight: normal;
+        }
+
+        .info-card .price {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #b94443;
+            margin-bottom: 6px;
+        }
+
+        .info-card .status {
+            border-top: 1px solid rgba(185, 68, 67, 0.3);
+            padding-top: 6px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #b94443;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Espacio del Logo corporativo -->
+    <header>
+        <div class="logo-container">
+            <!-- NOTA: Cambia 'logo.png' por el nombre real de tu archivo de logo si es diferente -->
+            <img src="logo.JPG" alt="Logotipo de la Empresa">
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="decor-line top-left"></div>
+        
+        <h1>Máscaras</h1>
+
+        <div class="catalog-grid">
+            
+            <!-- PRODUCTO 1 -->
+            <!-- Para ver tu foto real, cambia 'traje1.jpg' por el nombre real de tu imagen dentro de la carpeta 'fotos' -->
+            <div class="photo-space" style="background-image: url('fotos/IMG_0057.jpeg');">
+                <div class="info-card">
+                    <div class="description">Frankenstein</div>
+                    <div class="details">Temática: terror.</div>
+                    <div class="price">$7.50</div>
+                    <div class="status">Disponible</div>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 2 -->
+            <div class="photo-space" style="background-image: url('fotos/IMG_0043.jpeg');">
+                <div class="info-card">
+                    <div class="description">Calavera</div>
+                    <div class="details">Temática: terror.</div>
+                    <div class="price">$2.00</div>
+                    <div class="status">Disponible</div>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 3 -->
+            <div class="photo-space" style="background-image: url('fotos/IMG_0044.jpeg');">
+                <div class="info-card">
+                    <div class="description">Calavera</div>
+                    <div class="details">Temática: terror.</div>
+                    <div class="price">$2.00</div>
+                    <div class="status">Disponible</div>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 4 -->
+            <div class="photo-space" style="background-image: url('fotos/IMG_0045.jpeg');">
+                <div class="info-card">
+                    <div class="description">Muerto viviente</div>
+                    <div class="details">Temática: terror.</div>
+                    <div class="price">$2.00</div>
+                    <div class="status">Disponible</div>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 5 -->
+            <div class="photo-space" style="background-image: url('fotos/IMG_0046.jpeg');">
+                <div class="info-card">
+                    <div class="description">Calavera</div>
+                    <div class="details">Temática: terror.</div>
+                    <div class="price">$2.00</div>
+                    <div class="status">Disponible</div>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 6 -->
+            <div class="photo-space" style="background-image: url('fotos/IMG_0047.jpeg');">
+                <div class="info-card">
+                    <div class="description">Demonio</div>
+                    <div class="details">Temática: terror.</div>
+                    <div class="price">$2.00</div>
+                    <div class="status">Disponible</div>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 7 -->
+            <div class="photo-space" style="background-image: url('fotos/IMG_0048.jpeg');">
+                <div class="info-card">
+                    <div class="description">Laka Laka</div>
+                    <div class="details">Temática: Día de los muertos.</div>
+                    <div class="price">$3.50</div>
+                    <div class="status">Disponible</div>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 8 -->
+            <div class="photo-space" style="background-image: url('fotos/IMG_0049.jpeg');">
+                <div class="info-card">
+                    <div class="description">Laka Laka</div>
+                    <div class="details">Temática: Día de los muertos.</div>
+                    <div class="price">$3.50</div>
+                    <div class="status">Disponible</div>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 9 -->
+            <div class="photo-space" style="background-image: url('fotos/IMG_0041.jpeg');">
+                <div class="info-card">
+                    <div class="description">Gorila</div>
+                    <div class="details">Temática: animales.</div>
+                    <div class="price">$2.50</div>
+                    <div class="status">Disponible</div>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 10 -->
+            <div class="photo-space" style="background-image: url('fotos/IMG_0051.jpeg');">
+                <div class="info-card">
+                    <div class="description">Anonimous</div>
+                    <div class="details">Temática: terror.</div>
+                    <div class="price">$2.50</div>
+                    <div class="status">Disponible</div>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 11 -->
+            <div class="photo-space" style="background-image: url('fotos/IMG_0052.jpeg');">
+                <div class="info-card">
+                    <div class="description">La Casa de Papel: Corea</div>
+                    <div class="details">Temática: películas.</div>
+                    <div class="price">$2.50</div>
+                    <div class="status">Disponible</div>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 12 -->
+            <div class="photo-space" style="background-image: url('fotos/IMG_0053.jpeg');">
+                <div class="info-card">
+                    <div class="description">La Casa de Papel</div>
+                    <div class="details">Temática: películas.</div>
+                    <div class="price">$2.50</div>
+                    <div class="status">Disponible</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="decor-line bottom-right"></div>
+    </div>
+
+</body>
+</html>
